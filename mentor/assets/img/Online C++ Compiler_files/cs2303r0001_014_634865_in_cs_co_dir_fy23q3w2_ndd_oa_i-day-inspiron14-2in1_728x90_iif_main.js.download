@@ -1,0 +1,67 @@
+var banner = document.getElementById('banner');
+var legal = document.getElementById('roll-cta');
+var replay = document.getElementById('replay');
+
+var tl = new TimelineMax({repeat:0, repeatDelay:2.5});
+
+
+window.onload = function() {   
+  
+tl.set(banner, {visibility: "visible"})
+
+
+	/*frame one*/	
+	.add("frame1")
+	.from(".dell-logo,.cta,.vendor-logo, .funding", .3, {alpha:0, ease:Linear.easeIn}, "frame1")
+	.from(".product_f1", .5, {y:-90, ease: Power1.easeInOut}, "frame1")
+	.staggerTo(".headingf1,.title-1_1,.title-1_2", 1, {clip:"rect(0px,400px,30px,0px)", x:10, ease:Expo.easeInOut},0.3, "frame1")
+	.to(".product_f1", .5, {alpha:0, ease: Power1.easeInOut}, "frame1+=3.25")
+	.staggerTo(".headingf1,.title-1_1,.title-1_2", .3, {clip:"rect(0px,0px,30px,0px)", x:-10, ease:Expo.easeIn},0.1, "frame1+=3.25")
+	.to(".dell-logo, .vendor-logo, .funding", .3, {alpha:0, ease:Linear.easeIn}, "frame1+=3.25")
+
+	/*frame three*/
+	.add("frame3","frame1+=3.5")
+	.from(".headingf3", .5, {alpha:0, ease:Linear.easeIn}, "frame3")
+	.from(".product_f3", .5, {alpha:0, x:60, ease: Power1.easeInOut}, "frame3")
+	.from(".price-mainbox3", .5, {alpha:0, ease:Expo.easeInOut}, "frame3")	
+	.from(".viof3", .5, {alpha:0, ease:Expo.easeInOut}, "frame3+=.3")	
+	.from(".vio_textf3", .5, {x:100, ease:Expo.easeInOut}, "frame3+=.5")	
+	.to(".product_f3,.price-mainbox3,.viof3,.vio-boxf3,.headingf3", .5, {alpha:0, rotation:0.01,  ease:Power4.easeOut}, "frame3+=3")
+
+	/*frame four*/
+	.add("frame4","frame3+=3.5")
+	.from(".headingf4", .5, {alpha:0, ease:Linear.easeIn}, "frame4")
+	.from(".price-mainbox4", .5, {alpha:0, ease:Expo.easeInOut}, "frame4")	
+	.from(".product_f4", .5, {alpha:0, x:60, ease: Power1.easeInOut}, "frame4")
+	.from(".viof4", .5, {alpha:0, ease:Expo.easeInOut}, "frame4+=.3")	
+	.from(".vio_textf4", .5, {x:100, ease:Expo.easeInOut}, "frame4+=.5")	
+
+	/*roll over*/
+	.from("#roll-cta", .5, {alpha:0, x:-300, ease:Power4.easeout}, "frame4")
+	.from("#rolltext", .5, {alpha:0, ease:Power4.easeout}, "frame4")
+	.from("#legal-text", .5, {alpha:0, ease:Power4.easeout}, "frame4")
+	.to(".replay", .3, {autoAlpha:1, visibility: "visible", display:'block', ease: Sine.easeOut})
+
+	legal.addEventListener("mouseover",legalHover);
+	function legalHover(){
+		tl.pause();
+		TweenMax.to("#legal", .5, {top:0, ease:Power1.easeOut})  
+	}
+
+	legal.addEventListener("mouseout",legalOut);
+	function legalOut(){
+		tl.play();
+		TweenMax.to("#legal", .5, {top:-1000, ease:Power1.easeIn})
+	}
+
+
+    //----- Reply ------
+      replay.addEventListener("click", function(){
+          tl.restart();
+      });
+    
+    // tl.seek("loop")
+
+    var currentDuration = tl.duration();
+    console.log(currentDuration);   
+};

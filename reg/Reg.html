@@ -1,0 +1,196 @@
+<html>
+
+<head>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<meta charset="UTF-8">
+	<title>Registration Form</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="container">
+		<!---heading---->
+		<header class="heading"> Registration-Form</header>
+
+		<!---Form starting---->
+		<form action="index3.php" method="POST">
+			<div class="row" style="padding-top: 20px;margin: auto 20px;">
+				<!--- For Name---->
+				<div class="col-sm-12">
+					<div class="row">
+						<div class="col-xs-3">
+							<label class="firstname">First Name :</label>
+						</div>
+						<div class="col-xs-9">
+							<input type="text" name="fname" id="fname" placeholder="Enter your First Name"
+								pattern="[A-Za-z0-9 ]{1,}" class="form-control ">
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-sm-12">
+					<div class="row">
+						<div class="col-xs-3">
+							<label class="lastname">Last Name :</label>
+						</div>
+						<div class="col-xs-9">
+							<input type="text" name="lname" id="lname" placeholder="Enter your Last Name"
+								pattern="[A-Za-z]{1,8}" class="form-control last">
+						</div>
+					</div>
+				</div>
+				<!-----For Address---->
+				<div class="col-sm-12">
+					<div class="row">
+						<div class="col-xs-3">
+							<label class="pass">House Name :</label>
+						</div>
+						<div class="col-xs-9">
+							<input type="text" name="House Name" id="House Name" placeholder="Enter your address"
+								pattern="[A-Za-z0-9 ]{5}" class="form-control last">
+						</div>
+					</div>
+				</div>
+				<!----------For State-------->
+				<div class="col-sm-12">
+					<div class="row">
+						<div class="col-xs-3">
+							<label class="pass">State :</label>
+						</div>
+						<div class="col-xs-9">
+							<select class="form-control last">
+								<option value="kerala">Kerala</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<!----------For District-------->
+				<div class="col-sm-12">
+					<div class="row">
+						<div class="col-xs-3">
+							<label class="pass">District:</label>
+						</div>
+						<div class="col-xs-9">
+							<select class="form-control last">
+								<option value="Ernakulam">Ernakulam</option>
+							</select>
+						</div>
+
+					</div>
+				</div>
+				<!----------For city-------->
+				<div class="col-sm-12">
+					<div class="row">
+						<div class="col-xs-3">
+							<label class="pass">City :</label>
+						</div>
+						<div class="col-xs-9">
+							<select class="form-control last">
+								<option value="Muvattupuzha">Muvattupuzha</option>
+								<option value1="Piravom">Piravom</option>
+							</select>
+						</div>
+
+					</div>
+				</div>
+
+				<!-----For email---->
+				<div class="col-sm-12">
+					<div class="row">
+						<div class="col-xs-3">
+							<label class="mail">Email :</label>
+						</div>
+						<div class="col-xs-9">
+							<input type="email" name="email" id="email" placeholder="Enter your email"
+								pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,25}" class="form-control">
+						</div>
+					</div>
+				</div>
+				<!-----For Phone number---->
+				<div class="col-sm-12">
+					<div class="row">
+						<div class="col-xs-3">
+							<label class="pass">Phone Number :</label>
+						</div>
+						<div class="col-xs-9">
+							<input type="number" name="phone Number" id="Phone Number"
+								placeholder="Enter your Phone number" pattern="[91][0-9]{9}" class="form-control">
+						</div>
+					</div>
+				</div>
+
+				<!-----------For Phone number-------->
+				<div class="col-sm-12">
+					<div class="row">
+						<div class="col-xs-3 ">
+							<label class="gender">Gender:</label>
+						</div>
+
+						<div class="col-xs-3 male">
+							<input class="form-check-input" type="radio" name="gender" id="gender"
+								value="boy">Male</input>
+						</div>
+
+						<div class="col-xs-3 female">
+							<input type="radio" name="gender" id="gender" value="girl">Female</input>
+						</div>
+
+					</div>
+				</div>
+				<!-----For Password and confirm password---->
+				<div class="col-sm-12">
+					<div class="row">
+						<div class="col-xs-3">
+							<label class="pass">Password :</label>
+						</div>
+						<div class="col-xs-9">
+							<input type="password" name="password" id="password" placeholder="Enter your Password"
+								class="form-control">
+						</div>
+					</div>
+					<!----------For Security Question-------->
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-xs-3">
+								<label class="pass">Security Question :</label>
+							</div>
+							<div class="col-xs-9">
+								<input type="text" name="question" id="question" placeholder=" "
+									pattern="[A-Za-z0-9 ]{10}" class="form-control">
+							</div>
+						</div>
+					</div>
+					<!----------For Security Response-------->
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-xs-3">
+								<label class="pass">Security Response:</label>
+							</div>
+							<div class="col-xs-9">
+								<input type="text" name="Response" id="Response" placeholder=" "
+									pattern="[A-Za-z0-9]{1}" class="form-control">
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-xs-12">
+								<button type="submit" class="btn btn-warning">Submit</button>
+							</div>
+						</div>
+					</div>
+				</div>
+		</form>
+	</div>
+
+
+</body>
+
+</html>
